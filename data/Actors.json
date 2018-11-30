@@ -1,5 +1,5 @@
 [
 null,
-{"id":1,"battlerName":"洛克","characterIndex":0,"characterName":"洛克","classId":2,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"洛克","traits":[],"initialLevel":1,"maxLevel":99,"name":"洛克","nickname":"洛克","note":"<Max Level: 999>\n<Initial Level: 998>","profile":""},
+{"id":1,"battlerName":"洛克","characterIndex":0,"characterName":"洛克","classId":2,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"洛克","traits":[],"initialLevel":1,"maxLevel":99,"name":"洛克","nickname":"洛克","note":"<Max Level: 999>\n<Initial Level: 10>","profile":""},
 {"id":2,"battlerName":"莉莉丝","characterIndex":0,"characterName":"莉莉丝","classId":3,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"莉莉丝","traits":[],"initialLevel":1,"maxLevel":99,"name":"莉莉丝","nickname":"莉莉丝","note":"","profile":""}
 ]
