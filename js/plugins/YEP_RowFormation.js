@@ -56,6 +56,10 @@ Yanfly.Row.version = 1.12;
  * @desc How many turns must the player wait after changing rows?
  * @default 1
  *
+ * @param Max Battle Members
+ * @desc Max Battle Members
+ * @default 4
+ *
  * @param ---Defaults---
  * @default
  *
@@ -780,6 +784,7 @@ Yanfly.Param.RowShowBat = eval(Yanfly.Param.RowShowBat);
 Yanfly.Param.RowEnBat = String(Yanfly.Parameters['Enable Battle Command']);
 Yanfly.Param.RowEnBat = eval(Yanfly.Param.RowEnBat);
 Yanfly.Param.RowCooldown = Number(Yanfly.Parameters['Battle Cooldown']);
+Yanfly.Param.MaxBattleMembers = Number(Yanfly.Parameters['Max Battle Members']);
 
 Yanfly.Param.RowDefault = Number(Yanfly.Parameters['Default Row']);
 Yanfly.Param.RowDefault = Yanfly.Param.RowDefault.clamp(1, 10);
@@ -816,11 +821,19 @@ for (Yanfly.i = 1; Yanfly.i < 11; ++Yanfly.i) {
   Yanfly.Row.HomeX[Yanfly.i] = String(Yanfly.Parameters[Yanfly.text]);
   Yanfly.text = 'Row ' + Yanfly.i + ' Home Y';
   Yanfly.Row.HomeY[Yanfly.i] = String(Yanfly.Parameters[Yanfly.text]);
+  // console.log("===================1")
+  // console.log(Yanfly.Row.HomeX[Yanfly.i])
+  // console.log(Yanfly.Row.HomeY[Yanfly.i])
+  // console.log("===================2")
 };
 
 Yanfly.Param.RowEnemyAdj = eval(String(Yanfly.Parameters['Adjust Relative']));
 Yanfly.Param.RowEnemyX = String(Yanfly.Parameters['Enemy Row X']);
 Yanfly.Param.RowEnemyY = String(Yanfly.Parameters['Enemy Row Y']);
+
+Game_Party.prototype.maxBattleMembers = function() {
+    return Yanfly.Param.MaxBattleMembers;
+};
 
 //=============================================================================
 // DataManager
@@ -1585,9 +1598,9 @@ Sprite_Actor.prototype.alterActorHome = function(index) {
     var maxRows = Yanfly.Param.RowMaximum;
     var partySize = $gameParty.battleMembers().length;
     var rowId = this._actor.row();
-    var rowSize = $gameParty.rowSize(rowId);
+    var rowSize = 5;//$gameParty.rowSize(rowId);
     var rowMembers = $gameParty.rowMembers(rowId);
-    var rowIndex = this._actor.rowIndex();
+    var rowIndex = index;//this._actor.rowIndex();
     if (Imported.YEP_BattleEngineCore) {
       var statusHeight = Yanfly.Param.BECCommandRows;
     } else {
@@ -1637,6 +1650,14 @@ Sprite_Actor.prototype.alterActorHome = function(index) {
       var homeY = 0;
       Yanfly.Util.displayError(e, code, 'ROW FORMATION ACTOR HOME Y ERROR');
     }
+  console.log("===================1")
+  console.log(index)
+  console.log(homeY)
+  console.log(code)
+  console.log(rowSize)
+  console.log(rowIndex)
+  console.log(rowId)
+  console.log("===================2")
     this._homeX = homeX;
     this._homeY = homeY;
 };

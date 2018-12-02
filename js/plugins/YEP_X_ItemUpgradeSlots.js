@@ -405,11 +405,21 @@ ItemManager.checkIUSEffects = function(mainItem, effectItem) {
         mainItem = this._resetItem;
         this._resetItem = undefined;
       }
+    console.log(mainItem.params[0]);
+    console.log(mainItem.params[1]);
+    console.log(mainItem.params[2]);
+    console.log(mainItem.params[3]);
+    console.log(mainItem.params[4]);
+    console.log(mainItem.params[5]);
+    console.log(mainItem.params[6]);
+    console.log(mainItem.params[7]);
     }
 };
 
 ItemManager.processIUSEffect = function(line, mainItem, effectItem) {
     // Imported.YEP_X_ItemPictureImg
+    console.log("111111111111111111");
+    console.log(line);
     if (Imported.YEP_X_ItemPictureImg) {
       if (line.match(/PICTURE IMAGE:[ ](.*)/i)) {
         var filename = String(RegExp.$1);
@@ -472,16 +482,30 @@ ItemManager.processIUSEffect = function(line, mainItem, effectItem) {
       var value = parseInt(RegExp.$1);
       return this.effectIUSTextColor(mainItem, value);
     }
+    
+    console.log(mainItem.params[0]);
+    console.log(mainItem.params[1]);
+    console.log(mainItem.params[2]);
+    console.log(mainItem.params[3]);
+    console.log(mainItem.params[4]);
+    console.log(mainItem.params[5]);
+    console.log(mainItem.params[6]);
+    console.log(mainItem.params[7]);
     // STAT: +/-X%
     if (line.match(/(.*):[ ]([\+\-]\d+)([%％])/i)) {
       var stat = String(RegExp.$1).toUpperCase();
+      console.log(stat);
       var value = parseInt(RegExp.$2);
+      console.log(value);
+      console.log(mainItem.name);
       return this.effectIUSParamRateChange(mainItem, stat, value);
     }
     // STAT: +/-X
     if (line.match(/(.*):[ ]([\+\-]\d+)/i)) {
       var stat = String(RegExp.$1).toUpperCase();
+      console.log(stat);
       var value = parseInt(RegExp.$2);
+      console.log(value);
       return this.effectIUSParamChange(mainItem, stat, value);
     }
     // SUFFIX: X
@@ -772,6 +796,7 @@ ItemManager.effectIUSResetStat = function(item, stat) {
 
 ItemManager.effectIUSParamRateChange = function(item, stat, value) {
     var baseItem = DataManager.getBaseItem(item);
+    console.log(stat);
     switch (stat) {
       case 'HP':
       case 'MAXHP':
@@ -825,9 +850,20 @@ ItemManager.effectIUSParamRateChange = function(item, stat, value) {
         item.upgradeSlots += value * 0.01 * baseItem.upgradeSlots;
         break;
     }
+    console.log("-================1");
+    console.log(item.params[0]);
+    console.log(item.params[1]);
+    console.log(item.params[2]);
+    console.log(item.params[3]);
+    console.log(item.params[4]);
+    console.log(item.params[5]);
+    console.log(item.params[6]);
+    console.log(item.params[7]);
+    console.log("-================2");
 };
 
 ItemManager.effectIUSParamChange = function(item, stat, value) {
+    console.log(stat)
     switch (stat) {
       case 'HP':
       case 'MAXHP':

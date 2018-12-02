@@ -1,5 +1,13 @@
 [
 null,
-{"id":1,"battlerName":"洛克","characterIndex":0,"characterName":"洛克","classId":2,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"洛克","traits":[],"initialLevel":1,"maxLevel":99,"name":"洛克","nickname":"洛克","note":"<Max Level: 999>\n<Initial Level: 10>","profile":""},
-{"id":2,"battlerName":"莉莉丝","characterIndex":0,"characterName":"莉莉丝","classId":3,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"莉莉丝","traits":[],"initialLevel":1,"maxLevel":99,"name":"莉莉丝","nickname":"莉莉丝","note":"","profile":""}
+{"id":1,"battlerName":"洛克","characterIndex":0,"characterName":"洛克","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"洛克","traits":[{"code":32,"dataId":5,"value":0.1}],"initialLevel":1,"maxLevel":99,"name":"洛克","nickname":"洛克","note":"<Max Level: 999>\n<Profile Text>\n这个人是主角\n</Profile Text>","profile":"这个人是主角1"},
+{"id":2,"battlerName":"莉莉丝","characterIndex":0,"characterName":"莉莉丝","classId":3,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"莉莉丝","traits":[],"initialLevel":1,"maxLevel":99,"name":"莉莉丝","nickname":"莉莉丝","note":"<Max Level: 999>","profile":""},
+{"id":3,"battlerName":"Actor1_3","characterIndex":2,"characterName":"Actor1","classId":2,"equips":[0,0,0,0,0],"faceIndex":2,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"阿朗","nickname":"","note":"<Max Level: 999>","profile":""},
+{"id":4,"battlerName":"Actor1_5","characterIndex":4,"characterName":"Actor1","classId":5,"equips":[0,0,0,0,0],"faceIndex":4,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"修斯","nickname":"","note":"<Max Level: 999>","profile":""},
+{"id":5,"battlerName":"Actor2_4","characterIndex":3,"characterName":"Actor2","classId":4,"equips":[0,0,0,0,0],"faceIndex":3,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"薇薇安","nickname":"","note":"<Max Level: 999>","profile":""},
+{"id":6,"battlerName":"安娜","characterIndex":0,"characterName":"安娜","classId":6,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"安娜","traits":[],"initialLevel":1,"maxLevel":99,"name":"安娜","nickname":"","note":"<Max Level: 999>","profile":""},
+{"id":7,"battlerName":"Actor1_7","characterIndex":6,"characterName":"Actor1","classId":7,"equips":[0,0,0,0,0],"faceIndex":6,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"泰尔西","nickname":"","note":"<Max Level: 999>","profile":""},
+{"id":8,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":9,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":10,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""}
 ]

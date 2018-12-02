@@ -800,6 +800,8 @@ ItemManager.processAugmentList = function(item, effectItem, slotId, list) {
 };
 
 ItemManager.processAugmentEffect = function(line, mainItem, effectItem, slot) {
+      console.log("=====================3")
+  console.log(line)
   // CANNOT DETACH
   if (line.match(/CANNOT DETACH/i)) {
     return this.applyAugmentCanotDetach(mainItem, slot);
@@ -966,6 +968,11 @@ ItemManager.processAugmentEffect = function(line, mainItem, effectItem, slot) {
 };
 
 ItemManager.adjustItemTrait = function(mainItem, code, dataId, value, add) {
+   console.log("===============6")
+  console.log(code)
+  console.log(dataId)
+  console.log(value)
+  console.log(add)
     if (add) {
       this.addTraitToItem(mainItem, code, dataId, value);
     } else {
@@ -1072,6 +1079,8 @@ ItemManager.applyAugmentDebuff = function(mainItem, element, add) {
 };
 
 ItemManager.applyAugmentElement = function(mainItem, text, add) {
+    console.log("=====================2")
+  console.log(text)
     if (text.match(/(\d+),[ ](\d+)([%％])/i)) {
       var id = parseInt(RegExp.$1);
       var rate = parseFloat(RegExp.$2) * 0.01;
@@ -1265,6 +1274,9 @@ ItemManager.applyAugmentParamRate = function(mainItem, param, value) {
   var add = $gameTemp._augmentSetting === 'attach';
   value = parseFloat(value * 0.01);
   var rate = value + 1;
+  console.log("=====================1")
+  console.log(param)
+  console.log(add)
   if (['MAXHP', 'MHP', 'MAX HP', 'HP'].contains(param)) {
     var code = Game_BattlerBase.TRAIT_PARAM;
     var id = 0;
@@ -1297,13 +1309,15 @@ ItemManager.applyAugmentParamRate = function(mainItem, param, value) {
     var code = Game_BattlerBase.TRAIT_SPARAM;
     var id = Yanfly.Param.AugmentSParams.indexOf(param);
   } else {
+    console.log("=====================4")
     return;
   }
+  console.log("=====================5",id)
   this.adjustItemTrait(mainItem, code, id, rate, add);
 };
 
 ItemManager.applyAugmentParamPlus = function(mainItem, param, value) {
-  if (['MAXHP', 'MHP', 'MAX HP', 'HP'].contains(param)) {
+  if (['MAXHP', 'MHP', 'MAX HP', 'HP'].contains()) {
     var paramId = 0;
   } else if (['MAXMP', 'MMP', 'MAX MP', 'MP'].contains(param)) {
     var paramId = 1;
@@ -1439,6 +1453,7 @@ Window_ItemInfo.prototype.drawAugmentInfo = function(dy) {
 
 Window_ItemInfo.prototype.drawAugmentData = function(slot, dy) {
     var text = this._item.augmentSlotItems[slot];
+    console.log(text)
     if (text.match(/NONE/i)) {
       text = Yanfly.Param.AugmentNoneText;
     } else if (text.match(/ITEM[ ](\d+)/i)) {
